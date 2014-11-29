@@ -17,24 +17,24 @@ public class PatientChooseActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(com.usuariode.symacli.R.layout.patient_selection);
+		setContentView(R.layout.patient_selection);
 
 		ButterKnife.inject(this);
 	}
 
-	@OnClick(com.usuariode.symacli.R.id.btn_new_checkin)
+	@OnClick(R.id.btn_new_checkin)
 	public void newCheckIn() {
 		Intent intent = new Intent(this, NewCheckInActivity.class);
 		startActivity(intent);
 	}
 
-	@OnClick(com.usuariode.symacli.R.id.btn_comment_to_doctor)
+	@OnClick(R.id.btn_comment_to_doctor)
 	public void sendComment() {
 		Intent intent = new Intent(this, PatientSendCommentActivity.class);
 		startActivity(intent);
 	}
 
-	@OnClick(com.usuariode.symacli.R.id.btn_set_reminders)
+	@OnClick(R.id.btn_set_reminders)
 	public void setReminders() {
 		Intent intent = new Intent(this, SetRemindersActivity.class);
 		startActivity(intent);

@@ -14,18 +14,18 @@ import butterknife.OnClick;
  */
 public class PatientSendCommentActivity extends Activity {
 
-	@InjectView(com.usuariode.symacli.R.id.comment_text)
+	@InjectView(R.id.comment_text)
 	EditText mCommentText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(com.usuariode.symacli.R.layout.patient_send_comment);
+		setContentView(R.layout.patient_send_comment);
 
 		ButterKnife.inject(this);
 	}
 
-	@OnClick(com.usuariode.symacli.R.id.btn_enviar)
+	@OnClick(R.id.btn_enviar)
 	public void sendText() {
 		// Send text
 		// TODO: Terminar
