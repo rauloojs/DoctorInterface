@@ -12,7 +12,7 @@ public class SetRemindersActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		//TODO: COMENTAR
-		setContentView(com.usuariode.symacli.R.layout.activity_login);
+		setContentView(R.layout.activity_login);
 
 
 		// TODO: list view

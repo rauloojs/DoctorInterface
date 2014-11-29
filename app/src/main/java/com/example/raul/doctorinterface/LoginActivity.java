@@ -55,17 +55,17 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(com.usuariode.symacli.R.layout.activity_login);
+		setContentView(R.layout.activity_login);
 
 		// Set up the login form.
-		mEmailView = (AutoCompleteTextView) findViewById(com.usuariode.symacli.R.id.email);
+		mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
 		populateAutoComplete();
 
-		mPasswordView = (EditText) findViewById(com.usuariode.symacli.R.id.password);
+		mPasswordView = (EditText) findViewById(R.id.password);
 		mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 			@Override
 			public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-				if (id == com.usuariode.symacli.R.id.login || id == EditorInfo.IME_NULL) {
+				if (id == R.id.login || id == EditorInfo.IME_NULL) {
 					attemptLogin();
 					return true;
 				}
@@ -73,7 +73,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 			}
 		});
 
-		Button mEmailSignInButton = (Button) findViewById(com.usuariode.symacli.R.id.email_sign_in_button);
+		Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
 		mEmailSignInButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -81,8 +81,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 			}
 		});
 
-		mLoginFormView = findViewById(com.usuariode.symacli.R.id.login_form);
-		mProgressView = findViewById(com.usuariode.symacli.R.id.login_progress);
+		mLoginFormView = findViewById(R.id.login_form);
+		mProgressView = findViewById(R.id.login_progress);
 	}
 
 	private void populateAutoComplete() {
@@ -120,18 +120,18 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
 		// Check for a valid password, if the user entered one.
 		if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-			mPasswordView.setError(getString(com.usuariode.symacli.R.string.error_invalid_password));
+			mPasswordView.setError(getString(R.string.error_invalid_password));
 			focusView = mPasswordView;
 			cancel = true;
 		}
 
 		// Check for a valid email address.
 		if (TextUtils.isEmpty(email)) {
-			mEmailView.setError(getString(com.usuariode.symacli.R.string.error_field_required));
+			mEmailView.setError(getString(R.string.error_field_required));
 			focusView = mEmailView;
 			cancel = true;
 		} else if (!isEmailValid(email)) {
-			mEmailView.setError(getString(com.usuariode.symacli.R.string.error_invalid_email));
+			mEmailView.setError(getString(R.string.error_invalid_email));
 			focusView = mEmailView;
 			cancel = true;
 		}
@@ -294,7 +294,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 			if (success) {
 				finish();
 			} else {
-				mPasswordView.setError(getString(com.usuariode.symacli.R.string.error_incorrect_password));
+				mPasswordView.setError(getString(R.string.error_incorrect_password));
 				mPasswordView.requestFocus();
 			}
 		}
